@@ -15,6 +15,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import api.TicketMasterAPI;
+import database.DBConnection;
+import database.DBConnectionFactory;
 import entity.Item;
 
 /**
@@ -40,21 +42,24 @@ public class SearchItem extends HttpServlet {
 		double lat = Double.parseDouble(request.getParameter("lat"));
 		double lon = Double.parseDouble(request.getParameter("lon"));
 		
-		String term = request.getParameter("term");
-		TicketMasterAPI tmpAPI = new TicketMasterAPI();
-		List<Item> items = tmpAPI.search(lat, lon, term);
-		
-		JSONArray array = new JSONArray();
-		try {
-			for (Item item : items) {
-				JSONObject obj = item.toJSONObject();
-				array.put(obj);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		// term can be empty
+		String term= request.getParameter("term");
+		// default: mysql
+		DBConnection connection = DBConnectionFactory.getConnection();
+        try {
+        	List<Item> items = connection.searchItems(lat, lon, term);
+ 
+        	JSONArray array = new JSONArray();
+        	for (Item item : items) {
+        		array.put(item.toJSONObject());
+        	}
+        	rpcHelper.writeJsonArray(response, array);
+ 
+        } catch (Exception e) {
+        	e.printStackTrace();
+		} finally {
+			connection.close();
 		}
-		
-		rpcHelper.writeJsonArray(response, array);
 	}
 
 	/**
