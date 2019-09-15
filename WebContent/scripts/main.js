@@ -308,7 +308,7 @@
         var req = JSON.stringify({});
 
         // display loading message
-        showLoadingMessage('Loading nearby items...');
+        showLoadingMessage('Loading nearby events...');
 
         // make AJAX call
         ajax('GET', url + '?' + params, req,
@@ -316,14 +316,14 @@
             function(res) {
                 var items = JSON.parse(res);
                 if (!items || items.length === 0) {
-                    showWarningMessage('No nearby item.');
+                    showWarningMessage('No nearby event.');
                 } else {
                     listItems(items);
                 }
             },
             // failed callback
             function() {
-                showErrorMessage('Cannot load nearby items.');
+                showErrorMessage('Cannot load nearby events.');
             });
     }
 
@@ -340,18 +340,18 @@
         var req = JSON.stringify({});
 
         // display loading message
-        showLoadingMessage('Loading favorite items...');
+        showLoadingMessage('Loading favorite events...');
 
         // make AJAX call
         ajax('GET', url + '?' + params, req, function(res) {
             var items = JSON.parse(res);
             if (!items || items.length === 0) {
-                showWarningMessage('No favorite item.');
+                showWarningMessage('No favorite event.');
             } else {
                 listItems(items);
             }
         }, function() {
-            showErrorMessage('Cannot load favorite items.');
+            showErrorMessage('Cannot load favorite events.');
         });
     }
 
@@ -369,7 +369,7 @@
         var req = JSON.stringify({});
 
         // display loading message
-        showLoadingMessage('Loading recommended items...');
+        showLoadingMessage('Loading recommended events...');
 
         // make AJAX call
         ajax(
@@ -380,14 +380,14 @@
             function(res) {
                 var items = JSON.parse(res); //parse back to json; an array
                 if (!items || items.length === 0) {
-                    showWarningMessage('No recommended item. Make sure you have favorites.');
+                    showWarningMessage('No recommended event. Make sure you have favorites.');
                 } else {
                     listItems(items);
                 }
             },
             // failed callback
             function() {
-                showErrorMessage('Cannot load recommended items.');
+                showErrorMessage('Cannot load recommended events.');
             });
     }
 
