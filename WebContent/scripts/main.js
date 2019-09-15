@@ -3,10 +3,10 @@
     /**
      * Variables
      */
-    var user_id = '1111';
-    var user_fullname = 'John';
-    var lng = -122.08;
-    var lat = 37.38;
+    var user_id = '';
+    var user_fullname = '';
+    var lng = -83.732124;
+    var lat = 42.279594;
 
     /**
      * Initialize
@@ -32,7 +32,7 @@
 	/**
 	 * Session
 	 */
-	function validateSession() {
+    function validateSession() {
 		// The request parameters
 		var url = './login';
 		var req = JSON.stringify({});
@@ -51,6 +51,7 @@
 			}
 		});
 	}
+
 
 	function onSessionValid(result) {
 		user_id = result.user_id;
@@ -140,7 +141,7 @@
 	function login() {
 		var username = $('username').value;
 		var password = $('password').value;
-		password = md5(username + md5(password));
+//		password = md5(username + md5(password));
 
 		// The request parameters
 		var url = './login';
@@ -295,7 +296,7 @@
 
     /**
      * API #1 Load the nearby items API end point: [GET]
-     * /Dashi/search?user_id=1111&lat=37.38&lon=-122.08
+     * /Dashi/search?user_id=0001&lat=34.052235&lon=-118.243683
      */
     function loadNearbyItems() {
         console.log('loadNearbyItems');
@@ -328,7 +329,7 @@
 
     /**
      * API #2 Load favorite (or visited) items API end point: [GET]
-     * /Dashi/history?user_id=1111
+     * /Dashi/history?user_id=0001
      */
     function loadFavoriteItems() {
         activeBtn('fav-btn');
@@ -356,7 +357,7 @@
 
     /**
      * API #3 Load recommended items API end point: [GET]
-     * /Dashi/recommendation?user_id=1111
+     * /Dashi/recommendation?user_id=0001
      */
     function loadRecommendedItems() {
         activeBtn('recommend-btn');
@@ -397,7 +398,7 @@
      *            The item business id
      * 
      * API end point: [POST]/[DELETE] /Dashi/history request json data: {
-     * user_id: 1111, visited: [a_list_of_business_ids] }
+     * user_id: 0001, visited: [a_list_of_business_ids] }
      */
     function changeFavoriteItem(item_id) {
         // Check whether this item has been visited or not

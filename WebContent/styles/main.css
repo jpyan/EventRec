@@ -56,11 +56,14 @@ ul {
 	text-decoration: none;
 }
 
+
 #welcome-msg {
 	border-right: 1px solid #FFFFFF;
 	padding-right: 10px;
 }
-
+#avatar {
+	padding-left: 5px;
+}
 /**
  * main container
  */
@@ -76,7 +79,7 @@ ul {
 .container>header {
 	align-items: center;
 	background:
-		url('http://folkartcarsi.com/img/4.jpg')
+		url('https://www.wildadventures.com/-/media/Images/HFE/WA_COM/Concerts/2019/Concert-desktop.ashx')
 		no-repeat 50% 50%;
 	background-size: 100%;
 	display: flex;

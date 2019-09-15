@@ -215,14 +215,67 @@ public class MySQLConnection implements DBConnection {
 
 	@Override
 	public String getFullname(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return "";
+	  	}
+		
+		String fullname = "";
+		
+		try {
+			String sql = "SELECT first_name, last_name FROM users WHERE user_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, userId);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				fullname = rs.getString("first_name") + " " + rs.getString("last_name");
+			}
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return fullname;
 	}
 
 	@Override
 	public boolean verifyLogin(String userId, String password) {
-		// TODO Auto-generated method stub
-		return false;
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return false;
+	  	}
+		boolean verified = false;
+		
+		try {
+//			String sql = "SELECT password FROM users WHERE user_id = ?";
+//			PreparedStatement ps = conn.prepareStatement(sql);
+//			
+//			ps.setString(1, userId);
+//			
+//			ResultSet rs = ps.executeQuery();
+//			
+//			if (rs.next()) {
+//				if (rs.getString("password") == password) {
+//					verified = true;
+//				}
+//			}
+
+			String sql = "SELECT user_id FROM users WHERE user_id = ? AND password = ?";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			statement.setString(2, password);
+			ResultSet rs = statement.executeQuery();
+			
+			if (rs.next()) {
+				System.err.println("here!!");
+				verified = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return verified;
 	}
 
 }
