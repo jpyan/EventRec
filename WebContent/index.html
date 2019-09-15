@@ -11,13 +11,14 @@
 </head>
 <body>
   <header class="top-header">
-    <nav class="top-nav">
-      <a href="#">Home</a>
-      <a href="#">Contact</a>
-      <a href="#">About</a>
+    <nav class="top-nav" >
+      <a style="color : #F0FFFF" href="#">Home</a>
+      <a style="color : #F0FFFF"  href="#contact">Contact</a>
+      <a style="color : #F0FFFF" href="#about">About</a>
     </nav>
-    <span id="welcome-msg"></span>
-    <a id="logout-link" href="logout" style="padding-left: 10px; padding-right: 10px;">  Logout</a>
+    <span id="welcome-msg" style="color : #F0FFFF" ></span >
+    <a id="logout-link" href="logout" style="padding-left: 10px;
+	padding-right: 10px" >  Logout</a>
     <i id="avatar" class="avatar fa fa-user fa-2x"></i>
   </header>
   
@@ -41,7 +42,7 @@
     
       <aside id="item-nav">
         <div class="nav-icon">
-          <i class="fa fa-sitemap fa-2x"></i>
+          <i class="fa fa-list fa-2x" style="color: #FFFFFF"></i>
         </div>
         <nav class="main-nav">
           <a href="#" id="nearby-btn" class="main-nav-btn active">
@@ -50,7 +51,7 @@
           <a href="#" id="fav-btn" class="main-nav-btn">
             <i class="fa fa-heart"></i> My Favorites
           </a>
-          <a href="#" id="recommend-btn" class="main-nav-btn">
+          <a href="#" id="recommend-btn" class="main-nav-btn" style="border-bottom: 1px solid #FFFFFF">
             <i class="fa fa-thumbs-up"></i> Recommendation
           </a>
         </nav>
@@ -76,26 +77,31 @@
       </ul>
     </section>
   </div>
-  
-  <footer>
-    <p class="title">What We Do</p>
-    <p>"Help you find the best events around."</p>
-    <ul>
-      <li>
-        <p><i class="fa fa-map-o fa-2x"></i></p>
-        <p>Ann Arbor, MI</p>
-      </li>
-      <li>
-        <p><i class="fa fa-envelope-o fa-2x"></i></p>
-        <p>yorkyjp@icloud.com</p>
-      </li>
-      <li>
-        <p><i class="fa fa-phone fa-2x"></i></p>
-        <p>+1 585 662 8528</p>
-      </li>
-    </ul>
-  </footer>
-  
+  <a name="contact">
+	  <footer>
+	  	<br/>
+	  	<a name="about">
+		    <p class="title">What We Do</p>
+		    <p>"Help you find the best events around."</p>
+	    </a>
+	    <br/>
+		<br/>
+	    <ul>
+	      <li>
+	        <p><i class="fa fa-map-o fa-2x"></i></p>
+	        <p>Ann Arbor, MI</p>
+	      </li>
+	      <li>
+	        <p><i class="fa fa-envelope-o fa-2x"></i></p>
+	        <p>yorkyjp@icloud.com</p>
+	      </li>
+	      <li>
+	        <p><i class="fa fa-phone fa-2x"></i></p>
+	        <p>+1 585 662 8528</p>
+	      </li>
+	    </ul>
+	  </footer>
+  </a>
   <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
   <script src="scripts/main.js"></script>
 </body>

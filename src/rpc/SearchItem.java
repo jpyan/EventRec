@@ -52,20 +52,20 @@ public class SearchItem extends HttpServlet {
 		
 		// term can be empty
 		System.out.println("Did i go here1?");
-		String term= "";
+		String term= "tour music";
 		String userId = session.getAttribute("user_id").toString(); 
 //		String userId = request.getParameter("user_id");
 
 		// default: mysql
 		DBConnection connection = DBConnectionFactory.getConnection();
 		Set<String> favoritedItemIds = connection.getFavoriteItemIds(userId);
-		System.out.println("Did i go here2?");
+		
         try {
         	List<Item> items = connection.searchItems(lat, lon, term);
         	JSONArray array = new JSONArray();
-        	System.out.println("Did i go here3?");
+        	
         	for (Item item : items) {
-        		System.out.println("Did i go here4?");
+        		
         		JSONObject obj = item.toJSONObject();
         		// decide whether to show an empty or solid heart
 				obj.put("favorite", favoritedItemIds.contains(item.getItemId()));

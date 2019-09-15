@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #434343;
+	background: #DCDDD8;
 	color: #FFFFFF;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
@@ -21,7 +21,7 @@ ul {
  */
 .top-header {
 	align-items: center;
-	background: #DF574B;
+	background: #4E8098;
 	box-shadow: 0px 2px 10px #333333;
 	display: flex;
 	height: 60px;
@@ -56,14 +56,11 @@ ul {
 	text-decoration: none;
 }
 
-
 #welcome-msg {
 	border-right: 1px solid #FFFFFF;
 	padding-right: 10px;
 }
-#avatar {
-	padding-left: 5px;
-}
+
 /**
  * main container
  */
@@ -79,7 +76,7 @@ ul {
 .container>header {
 	align-items: center;
 	background:
-		url('https://www.wildadventures.com/-/media/Images/HFE/WA_COM/Concerts/2019/Concert-desktop.ashx')
+		url('http://talaangor.ir/files/fa/news/1397/3/30/80303_889.jpg')
 		no-repeat 50% 50%;
 	background-size: 100%;
 	display: flex;
@@ -89,14 +86,20 @@ ul {
 .container>header p {
 	border-left: 1px solid #FFFFFF;
 	font-weight: 400;
-	font-size: 2em;
+	font-size: 3em;
+	color:#FCFCFC;
 	line-height: 1em;
 	margin-left: 220px;
 	padding-left: 5px;
+	font-family: Impact, Charcoal, sans-serif;
+	text-shadow: 2px 2px #57595f;
 }
 
 .container>header span {
-	color: #FBAF41;
+	font-family: Impact, Charcoal, sans-serif;
+	text-shadow: 2px 1px #fffdfa;
+	font-size: 1.5em;
+	color: #fe5f55;
 }
 
 
@@ -104,7 +107,7 @@ ul {
  * login form
  */
 #login-form {
-  color: #624630;
+  color: #fffae1;
   margin: 0px auto;
   overflow: auto;
   padding: 40px;
@@ -112,7 +115,8 @@ ul {
 }
 
 #login-form label {
-  display: block;
+	
+  	display: block;
 }
 
 #login-form input {
@@ -140,7 +144,7 @@ ul {
  * main section
  */
 .main-section {
-	background: #F3BB43;
+	background: #fe5f55;
 }
 
 /**
@@ -163,6 +167,7 @@ ul {
 .main-nav-btn {
 	background: none;
 	border-top: 1px solid #FFFFFF;
+	
 	color: #FFFFFF;
 	display: block;
 	padding: 20px;
@@ -171,12 +176,12 @@ ul {
 }
 
 .main-nav-btn:hover {
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 1.0);
 	color: #624630;
 }
 
 .main-nav-btn.active {
-	background: #F2EBD9;
+	background: rgba(255, 255, 255, 1.0);
 	color: #624630;
 }
 
@@ -188,7 +193,7 @@ ul {
  * item list
  */
 #item-list {
-	background: #F2EBD9;
+	background: rgba(255, 255, 255, 1.0);
 	color: #624630;
 	list-style: none;
 	margin-left: 180px;
@@ -219,14 +224,14 @@ ul {
 }
 
 .item:hover {
-	background: rgba(255, 255, 255, 0.8);
+	background:#fca616;
 	transition: background-color 100ms linear;
 }
 
 .item img {
 	border: 1px solid #FFFFFF;
 	height: 80px;
-	width: 80px;
+	width: 100px;
 }
 
 .item>div:first-of-type {
@@ -273,7 +278,7 @@ ul {
  * footer section
  */
 footer {
-	background: #434343;
+	background: #4E8098;
 	font-size: 0.8em;
 	height: 200px;
 	position: relative;
